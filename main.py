@@ -6,6 +6,8 @@ import pygame
 
 pygame.init()
 screen = pygame.display.set_mode((640, 480))
+bg = pygame.image.load('images/woodsBackground.png')
+
 running = True
 
 while running:
@@ -16,4 +18,5 @@ while running:
             running = False
 
     screen.fill('purple')
+    screen.blit(bg, (0, 0))
     pygame.display.flip()  # display changes to screen
