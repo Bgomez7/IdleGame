@@ -8,6 +8,7 @@ pygame.init()
 screen = pygame.display.set_mode((640, 480))
 bg = pygame.image.load('images/woodsBackground.png')
 
+
 running = True
 
 while running:
