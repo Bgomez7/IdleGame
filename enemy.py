@@ -13,3 +13,10 @@ class Enemy:
         self.health_current = 10
         self.slain_count = 0
         self.souls_count = 0
+
+    def health_display(self, screen):
+        pygame.draw.rect(screen, 'red', pygame.rect.Rect(screen.get_width() / 2 - 100, 15, 200 * (
+                self.health_current / self.health_total), 30)
+        )
+        pygame.draw.rect(screen, 'gold', pygame.rect.Rect(screen.get_width() / 2 - 100, 15, 200, 30), 2)
+        draw_text(screen, self.health_current, 'goldenrod2', screen.get_width() / 2 - 10, 20, 24)
