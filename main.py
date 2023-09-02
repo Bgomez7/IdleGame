@@ -6,10 +6,6 @@ import pygame
 from sprite import Sprite_Sheet
 from enemy import Enemy
 
-def drawText(text, color, x, y, size):
-    f = pygame.font.Font("font/ThaleahFat.ttf", size)
-    screen.blit(f.render(str(text), True, color), (x, y))
-
 
 pygame.init()
 screen = pygame.display.set_mode((640, 480))
@@ -33,4 +29,5 @@ while running:
     screen.blit(bg, (0, 0))  # Display Background
     screen.blit(hero, (0,0))  # Display Hero
     screen.blit(enemy.sprite, enemy.sprite_rect)  # Display Enemy
+    enemy.health_display(screen)
     pygame.display.flip()  # display changes to screen

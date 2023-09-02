@@ -1,4 +1,5 @@
 import pygame.transform
+from text import draw_text
 
 
 class Enemy:
