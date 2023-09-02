@@ -3,7 +3,6 @@ from text import draw_text
 
 
 class Enemy:
-
     def __init__(self, screen, enemy_sprite):
         self.sprite = pygame.transform.scale(
             enemy_sprite, (enemy_sprite.get_width() * .75, enemy_sprite.get_height() * .75)
@@ -20,3 +19,13 @@ class Enemy:
         )
         pygame.draw.rect(screen, 'gold', pygame.rect.Rect(screen.get_width() / 2 - 100, 15, 200, 30), 2)
         draw_text(screen, self.health_current, 'goldenrod2', screen.get_width() / 2 - 10, 20, 24)
+
+    def new_enemy(self):
+        self.slain_count += 1
+        self.souls_count += 1
+
+        if self.slain_count < 10:
+            self.health_total = self.health_total + 5 + self.slain_count ** 2
+        else:
+            self.health_total = self.health_total + self.slain_count + int(self.slain_count ** 1.5)
+        self.health_current = self.health_total

@@ -1,6 +1,7 @@
 import pygame
 class Sprite_Sheet:
     def __init__(self, image):
+        """Initialize an object with a sprite sheet"""
         self.sheet = image
 
     def get_sprite(self, position_x, position_y, width, height, scale_x, scale_y, set_position=False):
