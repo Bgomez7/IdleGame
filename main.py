@@ -3,11 +3,13 @@
 """Idle clicker game using pygame."""
 
 import pygame
+from sprite import Sprite
 
 pygame.init()
 screen = pygame.display.set_mode((640, 480))
 bg = pygame.image.load('images/woodsBackground.png')
-
+hero_sheet = Sprite(pygame.image.load('images/HeroKnight.png'))
+hero = hero_sheet.get_sprite(0, 0, 100, 55, 3, 3)
 
 running = True
 
@@ -19,5 +21,6 @@ while running:
             running = False
 
     screen.fill('purple')
-    screen.blit(bg, (0, 0))
+    screen.blit(bg, (0, 0))  # Background
+    screen.blit(hero, (0,0))  # Hero
     pygame.display.flip()  # display changes to screen
