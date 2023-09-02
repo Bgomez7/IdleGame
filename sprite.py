@@ -1,5 +1,5 @@
 import pygame
-class Sprite:
+class Sprite_Sheet:
     def __init__(self, image):
         self.sheet = image
 
