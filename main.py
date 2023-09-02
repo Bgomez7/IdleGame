@@ -4,6 +4,7 @@
 
 import pygame
 from sprite import Sprite_Sheet
+from enemy import Enemy
 
 def drawText(text, color, x, y, size):
     f = pygame.font.Font("font/ThaleahFat.ttf", size)
@@ -16,6 +17,9 @@ bg = pygame.image.load('images/woodsBackground.png')
 hero_sheet = Sprite_Sheet(pygame.image.load('images/HeroKnight.png'))
 hero = hero_sheet.get_sprite(0, 0, 100, 55, 3, 3)
 
+enemy = Enemy(screen, pygame.image.load("images/BossMechaRattlesnake.png"))
+
+
 running = True
 
 while running:
@@ -26,6 +30,7 @@ while running:
             running = False
 
     screen.fill('purple')
-    screen.blit(bg, (0, 0))  # Background
-    screen.blit(hero, (0,0))  # Hero
+    screen.blit(bg, (0, 0))  # Display Background
+    screen.blit(hero, (0,0))  # Display Hero
+    screen.blit(enemy.sprite, enemy.sprite_rect)  # Display Enemy
     pygame.display.flip()  # display changes to screen
