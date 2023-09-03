@@ -3,14 +3,14 @@
 """Idle clicker game using pygame."""
 
 import pygame
-from sprite import Sprite_Sheet
+from sprite import SpriteSheet
 from enemy import Enemy
 
 
 pygame.init()
 screen = pygame.display.set_mode((640, 480))
 bg = pygame.image.load('images/woodsBackground.png')
-hero_sheet = Sprite_Sheet(pygame.image.load('images/HeroKnight.png'))
+hero_sheet = SpriteSheet(pygame.image.load('images/HeroKnight.png'))
 hero = hero_sheet.get_sprite(0, 0, 100, 55, 3, 3)
 
 enemy = Enemy(screen, pygame.image.load("images/BossMechaRattlesnake.png"))
@@ -27,7 +27,7 @@ while running:
 
     screen.fill('purple')
     screen.blit(bg, (0, 0))  # Display Background
-    screen.blit(hero, (0,0))  # Display Hero
+    screen.blit(hero, (0, 0))  # Display Hero
     screen.blit(enemy.sprite, enemy.sprite_rect)  # Display Enemy
     enemy.health_display(screen)
     pygame.display.flip()  # display changes to screen
